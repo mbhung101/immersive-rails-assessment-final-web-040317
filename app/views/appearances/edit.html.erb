@@ -1,0 +1,16 @@
+<h1> Edit Appearance Rating </h1>
+
+<h2> Guest : <%= "#{@appearance.guest.name}" %> </h2>
+<h3> Episode : <%= "#{@appearance.episode.number}" %> </h3>
+<h3> Airdate : <%= "#{@appearance.episode.date}" %> </h3>
+<h3> Producer(s) : <%= "#{@appearance.user.username}" %> </h3>
+
+
+<%= form_for @appearance do |f| %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating, in: (1..5) %>
+  <!-- <%= f.label :producer %>
+  <%= f.text_field :producer, :value => @appearance.user.username %> -->
+  <!-- incomplete producer editing -->
+  <%= f.submit %>
+<% end %>
